@@ -11,7 +11,7 @@ export default function Home() {
       /> */}
 
       <Image
-        src="/bg_image.jpg"
+        src="/bg_images.jpg"
         alt="Background"
         width={100}
         height={100}
