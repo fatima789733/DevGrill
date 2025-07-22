@@ -1,8 +1,8 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
-import { useState, useEffect } from "react";
 import HoverButton from "@/components/socials";
+import ClipIcons from "@/components/tech"; // adjust path if needed
 
 import {
   ArrowRight,
@@ -23,6 +23,7 @@ export default function Hero() {
     { icon: Database, name: "Backend", color: "text-red-500" },
     { icon: Zap, name: "Performance", color: "text-yellow-500" },
   ];
+
   const words = ["precision", "passion", "mastery"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
@@ -30,16 +31,16 @@ export default function Hero() {
     const interval = setInterval(() => {
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
     }, 3000);
-
     return () => clearInterval(interval);
-  }, [words.length]);
+  }, []);
+
   return (
-    <div className="flex flex-col items-center justify-center px-6 py-16 md:px-12 text-center">
+    <div className="flex flex-col h-screen w-full items-center justify-center px-6 md:px-12 text-center">
       <Navbar />
 
-      <div className="max-w-4xl mx-auto mt-20 space-y-8">
+      <div className="max-w-4xl w-full space-y-8">
         {/* Main Heading */}
-        <h1 className="text-5xl md:text-7xl font-semibold text-gray-800 leading-tight text-center">
+        <h1 className="text-5xl md:text-7xl font-semibold text-gray-800 leading-tight">
           Designing with purpose, building with{" "}
           <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 bg-clip-text text-transparent transition-all duration-500 ease-in-out">
             {words[currentWordIndex]}
@@ -47,7 +48,7 @@ export default function Hero() {
         </h1>
 
         {/* Subheading */}
-        <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
           Create stunning websites and applications with modern technologies.
           From concept to deployment, we make your digital vision come to life.
         </p>
@@ -62,29 +63,7 @@ export default function Hero() {
         </div>
 
         {/* Tech Stack Icons */}
-        <div className="flex flex-col items-center opacity-80">
-          <p className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">
-            Technologies We Love
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-6">
-            {techStack.map(({ icon: Icon, name, color }, index) => (
-              <div
-                key={name}
-                className="group flex flex-col items-center space-y-2 hover:scale-110 transition-all duration-300"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="bg-white/30 backdrop-blur-sm p-3 rounded-xl group-hover:bg-white/40 transition-all duration-300 group-hover:shadow-lg">
-                  <Icon
-                    className={`h-6 w-6 ${color} group-hover:scale-110 transition-transform duration-300`}
-                  />
-                </div>
-                <span className="text-xs font-medium text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {name}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <ClipIcons />
       </div>
     </div>
   );

@@ -5,18 +5,18 @@ import DownloadButton from "@/components/Button";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="backdrop-blur-md bg-white/20 border border-gray-300/30 rounded-full shadow-lg ">
+    <nav>
+      <div className="backdrop-blur-md bg-white/20 border border-gray-300/30 rounded-full shadow-xl ">
         <div className="flex items-center justify-between w-full min-w-[700px]">
           {/* Logo and Text - Left Side */}
           <div className="flex items-center space-x-4">
             <div className="p-2 bg-white/30 rounded-lg backdrop-blur-sm">
               <Image
-                src="/logo.png"
+                src="/logos.png"
                 alt="logo"
                 width={28}
                 height={28}
-                className="object-contain"
+                className="object-contain "
               />
             </div>
             <span className="text-lg font-semibold text-gray-800">
