@@ -12,7 +12,7 @@ export default function Navbar() {
           <div className="flex items-center space-x-4">
             <div className="p-2 bg-white/30 rounded-lg backdrop-blur-sm">
               <Image
-                src="/logos.png"
+                src="/logos.svg"
                 alt="logo"
                 width={28}
                 height={28}
