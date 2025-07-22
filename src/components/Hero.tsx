@@ -34,10 +34,10 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, [words.length]);
   return (
-    <div className="flex-1 flex flex-col items-center justify-center px-6 py-16 md:px-12 text-center">
+    <div className="flex flex-col items-center justify-center px-6 py-16 md:px-12 text-center">
       <Navbar />
 
-      <div className="max-w-4xl mx-auto mt-12 space-y-12">
+      <div className="max-w-4xl mx-auto mt-20 space-y-8">
         {/* Main Heading */}
         <h1 className="text-5xl md:text-7xl font-semibold text-gray-800 leading-tight text-center">
           Designing with purpose, building with{" "}
