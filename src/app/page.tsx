@@ -11,10 +11,11 @@ export default function Home() {
       /> */}
 
       <Image
-        src="/images/bg_images.jpg"
+        src="/bg_images.jpg"
         alt="Background"
-        fill
-        className="object-cover"
+        width={100}
+        height={100}
+        className="absolute inset-0 w-full h-full object-cover"
       />
 
       {/* Overlay with lower opacity */}
